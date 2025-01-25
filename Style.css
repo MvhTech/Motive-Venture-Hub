@@ -52,40 +52,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Logo Highlight Styles */
-.logo h1 {
-    font-size: 3rem; /* Larger font size for prominence */
-    color: #007BFF; /* Blue color for the text */
-    text-transform: uppercase; /* Make text uppercase for more impact */
-    letter-spacing: 2px; /* Space out letters for emphasis */
-    font-weight: bold; /* Make the text bold */
-    position: relative;
-}
-
-/* Gradient Text Effect */
-.logo h1 {
-    background: linear-gradient(90deg, #007BFF, #FF6F61); /* Gradient from blue to coral */
-    -webkit-background-clip: text; /* Clip the background to the text */
-    color: transparent; /* Make the text color transparent */
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for a glowing effect */
-}
-
-/* Animated Underline Effect */
-.logo h1::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    background-color: #FF6F61; /* Coral color for the underline */
-    bottom: 0;
-    left: 0;
-    transition: width 0.3s ease-in-out;
-}
-
-.logo h1:hover::after {
-    width: 100%; /* Expand the underline on hover */
-}
-
 /* Hero Section */
 .hero {
     position: relative;
@@ -173,6 +139,7 @@ html {
     overflow-x: auto;
     padding: 10px 0;
     scroll-snap-type: x mandatory;
+    gap: 20px;
 }
 
 .service-card {
@@ -243,4 +210,69 @@ footer .social-media a:hover {
 
 .scroll-top:hover {
     background-color: #FF4D39; /* Darker hover state */
+}
+
+/* Mobile & Tablet Responsive Styles */
+@media (max-width: 768px) {
+    /* Make the navigation bar vertical */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Reduce the size of the hero heading */
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    /* Stack service cards vertically on mobile */
+    .service-cards {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .service-card {
+        min-width: 100%;
+    }
+
+    /* Make the footer items stack */
+    footer ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .social-media a {
+        margin-right: 10px;
+        font-size: 1.2rem;
+    }
+
+    .scroll-top {
+        right: 10px;
+        bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Reduce font size further on very small screens */
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta-button {
+        font-size: 0.9rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+    }
 }
